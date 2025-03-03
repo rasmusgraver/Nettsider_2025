@@ -10,14 +10,32 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
+            /* vår "minimal css reset" */
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        img {
+            /* Bra å alltid ha med denne regelen også */
+            width: 100%;
+        }
+
+        body {
+            /* Vår navbar har position fixed. Da må vi ha litt 
+               margin på toppen for å ikke bli liggende "bak" den */
+            margin-top: 100px;
+        }
+
         nav {
             display: flex;
             justify-content: space-around;
+            /* Vi bruker position fixed for at navbar alltid skal synes i toppen */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            /* Pass på at navbaren ligger "over" annet innhold med z-index */
+            z-index: 1;
         }
 
         nav {
@@ -26,7 +44,7 @@
 
         nav a,
         nav button {
-            background-color: aliceblue;
+            background-color: inherit;
             color: darkblue;
             text-decoration: none;
             font-size: 30px;
@@ -39,6 +57,10 @@
             display: none;
             flex-direction: column;
             position: absolute;
+            background-color: antiquewhite;
+            padding: 20px;
+            margin-left: 20px;
+            margin-top: -10px;
         }
 
         .dropdown-content a {
