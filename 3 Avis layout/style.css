@@ -1,0 +1,104 @@
+/* vår "minimal css reset" */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    /* Bra å alltid ha med denne regelen også */
+    width: 100%;
+}
+
+/* Slutt på vår "minimal css reset" */
+
+
+* {
+    /* vår "minimal css reset" */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    /* Bra å alltid ha med denne regelen også */
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    /* Vår navbar har position fixed. Da må vi ha litt 
+       margin på toppen for å ikke bli liggende "bak" den */
+    margin-top: 100px;
+}
+
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-around;
+    /* Vi bruker position fixed for at navbar alltid skal synes i toppen */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    /* Pass på at navbaren ligger "over" annet innhold med z-index */
+    z-index: 1;
+}
+
+nav {
+    background-color: aliceblue;
+}
+
+nav a,
+nav button {
+    background-color: inherit;
+    color: darkblue;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 20px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: antiquewhite;
+    padding: 20px;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+
+.dropdown-content a {
+    font-size: 18px;
+    padding: 5px;
+}
+
+/* Slutt Navbar */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3px;
+    max-width: 900px;
+    margin: auto;
+}
+
+article {
+    background-color: bisque;
+    grid-column: span 3;
+    min-height: 150px;
+}
+
+article.large {
+    grid-column: span 6;
+}
+
+article.xlarge {
+    grid-column: span 12;
+}
