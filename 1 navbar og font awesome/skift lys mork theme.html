@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            /* vår "minimal css reset" */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            /* Bra å alltid ha med denne regelen også */
+            width: 100%;
+        }
+
+        body {
+            /* Vår navbar har position fixed. Da må vi ha litt 
+               margin på toppen for å ikke bli liggende "bak" den */
+            margin-top: 100px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            /* Vi bruker position fixed for at navbar alltid skal synes i toppen */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            /* Pass på at navbaren ligger "over" annet innhold med z-index */
+            z-index: 1;
+        }
+
+        nav {
+            background-color: aliceblue;
+        }
+
+        nav a,
+        nav button {
+            background-color: inherit;
+            color: darkblue;
+            text-decoration: none;
+            font-size: 30px;
+            padding: 20px;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .dropdown-content {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background-color: antiquewhite;
+            padding: 20px;
+            margin-left: 20px;
+            margin-top: -10px;
+        }
+
+        .dropdown-content a {
+            font-size: 18px;
+            padding: 5px;
+        }
+
+
+        .lys article {
+            background-color: white;
+            color: darkblue;
+        }
+        .mork article {
+            background-color: darkblue;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="klikk()">Dropdown
+                <!--  google "font awesome cdn"  -->
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <button id="skiftMorkLys">Skift til <span id="lysmork">mørk</span> </button>
+    </nav>
+
+    <article>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. At corporis iure deserunt! Praesentium magni
+        architecto placeat totam nobis aliquam sint aspernatur tempora? Reprehenderit blanditiis, modi quas iste error
+        eos laboriosam quos minus unde magni ex. Ad ex adipisci, esse voluptatem illo, consectetur iusto ipsam molestiae
+    </article>
+
+    <script>
+
+        function klikk() {
+            const dropdownElm = document.querySelector(".dropdown-content")
+            if (dropdownElm.style.display == "flex") {
+                dropdownElm.style.display = "none"
+            } else {
+                dropdownElm.style.display = "flex"
+            }
+        }
+
+        const skiftMorkLysElm = document.getElementById("skiftMorkLys")
+        const lysmorkSpan = document.getElementById("lysmork")
+
+        const navElementer = document.querySelectorAll("nav > *")
+        console.log(navElementer)
+
+        skiftMorkLysElm.addEventListener("click", skiftMorkLys)
+
+        let morkTheme = false
+        function skiftMorkLys() {
+            if (morkTheme) {
+                // Theme er allerede mørk: Skift til lys
+                console.log("Skift til lys")
+                document.body.className = "lys"
+                morkTheme = false
+                // Knappen skal nå skifte til "skift til mørk"
+                lysmorkSpan.innerHTML = "mørk"
+
+            } else {
+                // Theme er lys: Skift til mørk
+                console.log("Skift til mørk")
+                document.body.className = "mork"
+                morkTheme = true
+                // Knappen skal nå skifte til "skift til lys"
+                lysmorkSpan.innerHTML = "lys"
+            }
+        }
+    </script>
+</body>
+
+</html>
