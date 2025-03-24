@@ -1,0 +1,36 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    max-width: 600px;
+    margin: 60px auto;
+}
+header h2 {
+    margin-bottom: 20px;
+}
+.container, .column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.card {
+    border: 1px solid black;
+    height: 200px;
+    width: 300px;
+    padding: 20px;
+}
+
