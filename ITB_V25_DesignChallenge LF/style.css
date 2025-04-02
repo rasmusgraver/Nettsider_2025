@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+:root {
+    --color-purple: #674baf;
+    --color-light: #eee;
+    --color-accent: #e882e8;
+}
+
+/* Minimal CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* End minimal CSS Reset */
+
+.container,
+main,
+footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+body {
+    background-color: var(--color-purple);
+    background-image: url("images/bg.svg");
+    background-repeat: no-repeat;
+    font-family: "Open Sans", sans-serif;
+}
+header {
+    background-color: black;
+    height: 60px;
+    color: white;
+    font-size: 30px;
+}
+header .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.left,
+.right {
+    /* Sørger for at de to blir like store */
+    flex: 1;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-family: "Poppins";
+    padding-bottom: 20px;
+}
+
+p {
+    line-height: 1.5;
+    color: #eee;
+}
+
+button {
+    padding: 15px 60px;
+    margin-top: 30px;
+    border-radius: 5rem;
+    border: 0;
+    cursor: pointer;
+    color: var(--color-purple);
+    background-color: #eee;
+    font-size: 1em;
+    font-weight: 600;
+    transition: 0.3s all ease;
+}
+
+button:hover {
+    color: white;
+    background: var(--color-accent);
+}
+
+/* footer */
+footer {
+    text-align: right;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    padding: 20px;
+}
+
+.fab {
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: 0.3s all ease;
+    padding: 10px;
+}
+
+.fa-facebook-f {
+    padding: 10px 13px;
+}
+
+.fab:hover {
+    color: var(--color-purple);
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (width < 640px) {
+    main {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .left img {
+        width: 90%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .right {
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+    }
+}

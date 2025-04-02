@@ -1,0 +1,15 @@
+
+
+Body
+	- bakgrunnsfarge: #674baf
+	- bakgrunnsbilde: "images/bg-desktop.svg"
+
+
+Fonts
+	- default: https://fonts.google.com/specimen/Open+Sans 
+	- h1: https://fonts.google.com/specimen/Poppins
+
+Farger
+	- Lett grå: #eee
+	- Lilla: #674baf
+	
