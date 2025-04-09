@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/*
+  font-family: "Montserrat", sans-serif;
+  font-family: "Fraunces", serif;
+  font-family: "Open Sans", sans-serif;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+}
+
+h1 {
+    font-family: "Fraunces", serif;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+}
+
+.container input {
+    width: 80%;
+    font-size: 20px;
+    height: 100%;
+}
+.container button {
+    width: 20%;
+    background-color: blue;
+    color: white;
+}
+
+.container > div {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+#todolist > article {
+    margin-bottom: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 20px auto 30px;
+    gap: 5px;
+    align-items: center;
+}
+#todolist input {
+    width: 20px;
+}
