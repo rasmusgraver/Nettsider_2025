@@ -1,0 +1,15 @@
+
+button {
+    font-size: 50px;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: aquamarine;
+    color: blueviolet;
+    display: block;
+    margin: 30px;
+}
+
+#pizzaButton2 {
+    background-color: burlywood;
+    color: darkred;
+}

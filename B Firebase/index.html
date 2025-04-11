@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO Liste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button id="pizzaButton">Lag PizzaOppgave</button>
+
+    <button id="pizzaButton2">Slett PizzaOppgave</button>
+
+
+
+
+    <script type="module" src="firebase.js"></script>
+
+
+
+
+    
+
+
+
+
+
+
+
+    <script type="module">
+        import { getOppgaver, lagTodoOppgave, slettTodoOppgave } from "./firebase.js"
+
+        function refreshTodoListe() {
+            getOppgaver().then(function (oppgaveList) {
+                console.log(oppgaveList)
+            })
+        }
+
+        function lagPizzaOppgave() {
+            lagTodoOppgave("Bestille pizza").then(function (oppgaveId) {
+                if (oppgaveId) {
+                    console.log("Oppgaven opprettet med id", oppgaveId)
+                    refreshTodoListe()
+                } else {
+                    console.warn("FEIL ved oppretting av pizza-oppgave")
+                }
+            })
+
+        }
+
+        function slettPizzaOppgave() {
+            slettTodoOppgave("Bestille pizza").then(function (oppgaveId) {
+                if (oppgaveId) {
+                    console.log("Slettet en oppgave med id", oppgaveId)
+                    refreshTodoListe()
+                } else {
+                    console.warn("FEIL ved SLETTING av pizza-oppgave")
+                }
+            })
+
+        }
+
+        document.getElementById("pizzaButton").addEventListener("click", lagPizzaOppgave)
+        document.getElementById("pizzaButton2").addEventListener("click", slettPizzaOppgave)
+
+    </script>
+
+</body>
+
+</html>
